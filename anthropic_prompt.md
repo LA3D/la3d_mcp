@@ -1,6 +1,38 @@
 # Extracts form Antropic Prompt Engineering Guide
 https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview
 
+Read through [OpenAI's cookbook](https://cookbook.openai.com/examples/gpt4-1_prompting_guide) about prompt engineering with GPT 4.1 models. Here's what I found to be most interesting. (If you want more info, full down down available [here](https://www.prompthub.us/blog/the-complete-guide-to-gpt-4-1-models-performance-pricing-and-prompting-tips).)
+
+* Many typical best practices still apply, such as [few shot prompting](https://www.prompthub.us/blog/the-few-shot-prompting-guide), making instructions clear and specific, and inducing planning via [chain of thought prompting](https://www.prompthub.us/blog/chain-of-thought-prompting-guide).
+* GPT-4.1 follows instructions more closely and literally, requiring users to be more explicit about details, rather than relying on implicit understanding. This means that prompts that worked well for other models might not work well for the GPT-4.1 family of models.
+
+>Since the model follows instructions more literally, developers may need to include explicit specification around what to do or not to do. Furthermore, existing prompts optimized for other models may not immediately work with this model, because existing instructions are followed more closely and implicit rules are no longer being as strongly inferred.
+
+* GPT-4.1 has been trained to be very good at using tools. Remember, spend time writing good tool descriptions! 
+
+>Developers should name tools clearly to indicate their purpose and add a clear, detailed description in the "description" field of the tool. Similarly, for each tool param, lean on good naming and descriptions to ensure appropriate usage. If your tool is particularly complicated and you'd like to provide examples of tool usage, we recommend that you create an `# Examples` section in your system prompt and place the examples there, rather than adding them into the "description's field, which should remain thorough but relatively concise.
+
+* For long contexts, the best results come from placing instructions both before and after the provided content. If you only include them once, putting them **before** the context is more effective. This differs from [Anthropic’s guidance](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/long-context-tips#), which recommends placing instructions, queries, and examples **after** the long context.
+
+>If you have long context in your prompt, ideally place your instructions at both the beginning and end of the provided context, as we found this to perform better than only above or below. If you’d prefer to only have your instructions once, then above the provided context works better than below.
+
+* GPT-4.1 was trained to handle agentic reasoning effectively, but it doesn’t include built-in chain-of-thought. If you want chain of thought reasoning, you'll need to write it out in your prompt.
+
+‍
+
+They also included a suggested prompt structure that serves as a strong starting point, regardless of which model you're using.
+
+>\# Role and Objective  
+\# Instructions  
+\## Sub-categories for more detailed instructions  
+\# Reasoning Steps  
+\# Output Format  
+\# Examples  
+\## Example 1  
+\# Context  
+\# Final instructions and prompt to think step by step
+
+
 ## Be clear, direct, and detailed
 When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions. Like any new employee, Claude does not have context on your norms, styles, guidelines, or preferred ways of working. The more precisely you explain what you want, the better Claude’s response will be.
 
