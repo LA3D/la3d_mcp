@@ -32,7 +32,7 @@ Nuggets exposed via GitMCP for LA3D Projects
 - [MarkItDown-MCP](https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp)
 
 ## Common Code Tools
-- [homebrew]https://brew.sh/)
+- [homebrew](https://brew.sh/)
 - [Answer AI nbdev](https://github.com/AnswerDotAI/nbdev)
 - [Answer AI nbdev template](https://github.com/AnswerDotAI/nbdev-template)
 - [Execute a jupyter notebook, fast, without needing jupyter](https://github.com/AnswerDotAI/execnb)
